@@ -11,7 +11,7 @@ const App = () => {
     return(
       <div>
         {state ? <Tooltip text="This is tooltip" /> : ""}
-        <div className="tootip" onMouseEnter={() => setState(true)} onMouseLeave={() => setState(false)}>
+        <div className="tooltiptext" onMouseEnter={() => setState(true)} onMouseLeave={() => setState(false)}>
           
           <h1>Hover over me</h1>
 
