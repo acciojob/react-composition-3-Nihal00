@@ -5,32 +5,23 @@ import Tooltip from "./Tooltip";
 
 const App = () => {
 
-  const [isShow, setIsShow] = useState(false);
+  const [state, setState] = useState(false);
 
-  const onHover = () => setIsShow(true);
-  const offHover = () => setIsShow(false);
+    return(
+      <div>
+        <div className="tootip" onMouseEnter={() => setState(true)} onMouseLeave={() => setState(false)}>
+          <h1>Hover over me</h1>
+          {state ? <Tooltip text="This is tooltip" /> : ""}
+        </div>
 
-  return (
-    <div className="tootiptext">
-        {/* Do not remove the main div */}
-        {isShow ? <Tooltip 
-          text= "This is a tooltip" 
-        /> : ""}
-        <h1 
-          onMouseEnter={onHover}
-          onMouseLeave={offHover}
-        >Hover over me</h1>
-        <hr />
-        {isShow ? <Tooltip 
-          text="This is another tooltip"
-        /> : ""}
-        <p
-          onMouseEnter={onHover}
-          onMouseLeave={offHover}
-        >Hover over me to see the another tooltip</p>
-        <hr />
-    </div>
-  )
+        <div className="tooltiptext" onMouseEnter={() => setState(true)} onMouseLeave={() => setState(false)} >
+          <p>Hover over me to see another tooltip</p>
+          {state ? <Tooltip text="This is another tooltip" /> : ""}
+        </div>
+
+      </div>
+    )
+  
 }
 
 export default App
