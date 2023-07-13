@@ -10,19 +10,18 @@ const App = () => {
 
     return(
       <div>
+        {state ? <Tooltip text="This is tooltip" /> : ""}
         <div className="tootip" onMouseEnter={() => setState(true)} onMouseLeave={() => setState(false)}>
           
-          {state ? <Tooltip text="This is tooltip" /> : ""}
-
           <h1>Hover over me</h1>
 
         </div>
 
+        {stateTool ? <Tooltip text="This is another tooltip" /> : ""}
         <div className="tooltiptext" onMouseEnter={() => setToolState(true)} onMouseLeave={() => setToolState(false)} >
-         
-          {stateTool ? <Tooltip text="This is another tooltip" /> : ""}
-
+        
           <p>Hover over me to see another tooltip</p>
+
         </div>
 
       </div>
